@@ -4,6 +4,7 @@ import Header from './Header';
 import '../styles/style.scss'
 import Body from './Body';
 import Footer from './Footer';
+import NoFilms from './NoFilms';
 
 export default class App extends Component {
   state = {
@@ -30,6 +31,7 @@ export default class App extends Component {
         <Header itemsLength={this.state.items.length}/>
         <Body items={this.state.items}/>
         <Footer />
+        {/*<NoFilms />*/}
       </div>
     );
   }

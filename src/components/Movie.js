@@ -8,7 +8,7 @@ export default class Movie extends Component {
     console.log(data)
     return (
       <div className='contant'>
-        <div className="poster" style={{backgroundImage: `url(${data.poster_path})`}}></div>
+        <div className="poster" style={{backgroundImage: `url(${data.poster_path})`}}> </div>
         <div className='info'>
           <div className='movie-title'>
             {data.title}
