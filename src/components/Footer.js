@@ -5,9 +5,9 @@ import '../styles/style.scss'
 export default class Footer extends Component {
   render() {
     return (
-        <div className='footer'>
-          Front Camp
-        </div>
+      <div className='footer'>
+        Front Camp
+      </div>
     )
   }
 };
