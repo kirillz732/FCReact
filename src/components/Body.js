@@ -9,16 +9,18 @@ export default class Body extends Component {
 
   render() {
     return (
+      <BrowserRouter>
         <div className='container'>
 
           <ErrorBoundary>
             <For each="item" in={this.props.items}>
-              <NavLink to='/film'>
+              <NavLink to={`/film/${item.id}`} >
                 <Movie key={item.id} movieItem={item}/>
               </NavLink>
             </For>
           </ErrorBoundary>
         </div>
+      </BrowserRouter>
     )
   }
 };

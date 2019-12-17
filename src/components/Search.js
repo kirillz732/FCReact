@@ -2,17 +2,19 @@ import React, {Component} from 'react';
 
 import '../styles/style.scss'
 import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
 
 export default class Search extends Component {
+
   render() {
+      this.state = {value: ''};
+
 
     return (
       <div className='search-component'>
         <div className='title'>Fiend your movie</div>
         <div className='search'>
-          <TextField className='search-input' id="outlined-basic" variant="outlined"/>
-          <Button variant="contained" className='search-button' color="secondary">
+          <input className='search-input' id="outlined-basic" variant="outlined" />
+          <Button variant="contained" className='search-button' color="secondary" color="secondary" o>
             Search
           </Button>
         </div>

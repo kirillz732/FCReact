@@ -13,7 +13,7 @@ export default class Header extends Component {
       <BrowserRouter>
         <div className='header'>
           <Route path='' component={Search}/>
-          <Route path='/film' component={Film}/>
+          <Route path='/film/id' component={Film}/>
           <div className='found-movies'>
             <div className='title-found-movie'>{this.props.itemsLength} movie found</div>
             <div className='sort'>

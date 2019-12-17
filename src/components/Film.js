@@ -3,21 +3,37 @@ import React, {Component} from 'react';
 import '../styles/style.scss'
 
 export default class Film extends Component {
+  componentDidMount() {
+    console.log(this.props.movieItem);
+    fetch(`https://reactjs-cdp.herokuapp.com/movies/${this.props.movieItem}`)
+      .then(res =>  res.json())
+      .then(
+        (result) => {
+          this.setState({item: result.data });
+          console.log(result.data)
+        },
+        (error) => {
+          this.setState({
+            error
+          });
+        }
+      )
+  }
   render() {
-    let data = this.props.movieItem;
+
     return (
       <div className='film'>
-        <div className="poster" style={{backgroundImage: `url(${data.poster_path})`}}></div>
+        <div className="poster" style={{backgroundImage: `url(${this.state.poster_path})`}}></div>
         <div className='film-info'>
           <div className='title-id'>
             {data.title}
             <div className='score'>
-              {data.vote_average}
+              {this.state.vote_average}
             </div>
           </div>
-          <div className='tagline'>{data.tagline}</div>
-          <div className='date'>{data.release_date} </div>
-          <div className='overview'>{data.overview} </div>
+          <div className='tagline'>{this.state.tagline}</div>
+          <div className='date'>{this.state.release_date} </div>
+          <div className='overview'>{this.state.overview} </div>
         </div>
       </div>
     )
