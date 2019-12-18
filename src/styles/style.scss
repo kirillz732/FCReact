@@ -5,7 +5,7 @@ body {
 .header {
     height: 470px;
     width: auto;
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-b_qDSoMldfM9GxjZ2hDw1o5O2Lkgur7WdfdCR3frI6SAHI3vnw&s');
+    background-image: url('https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/hero-background.jpg');
 }
 
 .title {
@@ -92,6 +92,13 @@ body {
     margin: 0 0 25px 0;
 }
 
+.poster-small {
+    width: 270px;
+    height: 314px;
+    background: no-repeat;
+    margin: 0 0 25px 25px;
+}
+
 .movie-title {
     justify-content: space-between;
     display: flex;
@@ -117,12 +124,12 @@ body {
 }
 
 .no-films {
+    height: 400px;
     color: #FFFFFF;
     font-size: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 560px;
     background: #232323;
 }
 
@@ -159,6 +166,12 @@ body {
     font-size: 25px;
     margin: 35px 0;
     color: #f65261
+}
+
+.home {
+    position: absolute;
+    right: 35px;
+    top: 42px;
 }
 
 $darkNavy: #213140;

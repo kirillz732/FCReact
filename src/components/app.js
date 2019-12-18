@@ -4,7 +4,7 @@ import Header from './Header';
 import '../styles/style.scss'
 import Body from './Body';
 import Footer from './Footer';
-import NoFilms from './NoFilms';
+import {BrowserRouter} from "react-router-dom";
 
 export default class App extends Component {
   state = {
@@ -13,10 +13,10 @@ export default class App extends Component {
 
   componentDidMount() {
     fetch("https://reactjs-cdp.herokuapp.com/movies")
-      .then(res =>  res.json())
+      .then(res => res.json())
       .then(
         (result) => {
-          this.setState({items: result.data });
+          this.setState({items: result.data});
         },
         (error) => {
           this.setState({
@@ -25,14 +25,16 @@ export default class App extends Component {
         }
       )
   }
+
   render() {
     return (
-      <div>
-        <Header itemsLength={this.state.items.length}/>
-        <Body items={this.state.items}/>
-        <Footer />
-        {/*<NoFilms />*/}
-      </div>
+      <BrowserRouter forceRefresh={true}>
+        <div>
+          <Header itemsLength={this.state.items.length}/>
+          <Body items={this.state.items}/>
+          <Footer/>
+        </div>
+      </BrowserRouter>
     );
   }
 };

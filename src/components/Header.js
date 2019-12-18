@@ -3,7 +3,8 @@ import React, {Component} from 'react';
 import '../styles/style.scss'
 import Search from "./Search";
 import Film from "./Film";
-import {BrowserRouter, Route} from "react-router-dom";
+import {BrowserRouter, Route, Switch as RouterSwitch } from "react-router-dom";
+import NoFilms from "./NoFilms";
 
 
 export default class Header extends Component {
@@ -12,8 +13,11 @@ export default class Header extends Component {
     return (
       <BrowserRouter>
         <div className='header'>
-          <Route path='' component={Search}/>
-          <Route path='/film/id' component={Film}/>
+          <RouterSwitch >
+            <Route path="/" exact component={Search}/>
+            <Route path='/film/:id' component={Film}/>
+            <Route component={NoFilms}/>
+          </RouterSwitch>
           <div className='found-movies'>
             <div className='title-found-movie'>{this.props.itemsLength} movie found</div>
             <div className='sort'>

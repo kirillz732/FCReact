@@ -2,21 +2,31 @@ import React, {Component} from 'react';
 
 import '../styles/style.scss'
 import Button from "@material-ui/core/Button";
+import {NavLink} from "react-router-dom";
 
-export default class Search extends Component {
+export default class Search extends React.Component {
 
   render() {
-      this.state = {value: ''};
 
+    this.input = '';
+
+    function getInputValue() {
+      this.input = document.getElementById('outlined-basic')
+      return this.input;
+    }
 
     return (
+
       <div className='search-component'>
         <div className='title'>Fiend your movie</div>
         <div className='search'>
           <input className='search-input' id="outlined-basic" variant="outlined" />
-          <Button variant="contained" className='search-button' color="secondary" color="secondary" o>
-            Search
-          </Button>
+          <NavLink to={`/search/${this.input}`}>
+            <Button type='submit' variant="contained" className='search-button' color="secondary" color="secondary"
+                    onClick={getInputValue}>
+              Search
+            </Button>
+          </NavLink>
         </div>
 
         <div className='search-by'>Search by
@@ -28,6 +38,7 @@ export default class Search extends Component {
           </div>
         </div>
       </div>
+
     )
   }
 };
