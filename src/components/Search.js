@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
-import '../styles/style.scss'
+import '../styles/style.scss';
+
 import Button from "@material-ui/core/Button";
 import {NavLink} from "react-router-dom";
 

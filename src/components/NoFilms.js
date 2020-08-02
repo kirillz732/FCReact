@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import '../styles/style.scss'
+import '../styles/style.scss';
 
 export default class NoFilms extends Component {
   render() {

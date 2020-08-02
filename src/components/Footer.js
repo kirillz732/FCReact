@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
-import '../styles/style.scss'
+import '../styles/style.scss';
 
 export default class Footer extends Component {
   render() {
     return (
       <div className='footer'>
-        Front Camp
+        ReactJS
       </div>
     )
   }

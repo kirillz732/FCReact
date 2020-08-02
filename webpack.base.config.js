@@ -1,22 +1,20 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 module.exports = {
   entry: {
     app: "./src/index.js",
-    error: "./src/js/errorPopup.js"
   },
   output: {
-    filename: "[name].js",
-    path: path.resolve(__dirname, './dist'),
-    publicPath: "/dist"
+    path: path.join(__dirname, "/dist"),
+    filename: "index-bundle.js",
+    publicPath: '/'
   },
   module: {
     rules: [{
       test: /\.js$/,
-      loader: "babel-loader",
+      use: ["babel-loader"],
       exclude: "/node_modules/"
     }, {
       test: /\.scss$/,
@@ -28,7 +26,7 @@ module.exports = {
           options: { sourceMap: true }
         }, {
           loader: "postcss-loader",
-          options: { sourceMap: true, config: { path: 'src/js/postcss.config.js'} }
+          options: { sourceMap: true, config: { path: './src/postcss.config.js'} }
         }, {
           loader: "sass-loader",
           options: { sourceMap: true }
@@ -43,9 +41,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html'
-    }),
-    new MomentLocalesPlugin({
-      localesToKeep: ['es-us', 'ru'],
     }),
   ]
 };

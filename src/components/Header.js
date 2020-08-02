@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-import '../styles/style.scss'
 import Search from "./Search";
 import Film from "./Film";
 import {BrowserRouter, Route, Switch as RouterSwitch } from "react-router-dom";

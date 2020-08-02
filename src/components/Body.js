@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 
-import '../styles/style.scss'
-import ErrorBoundary from './ErrorBoundary'
+import ErrorBoundary from './ErrorBoundary';
 import Movie from "./Movie";
 import {NavLink} from "react-router-dom";
+
+import '../styles/style.scss';
 
 export default class Body extends Component {
 

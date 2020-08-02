@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import '../styles/style.scss'
+import '../styles/style.scss';
 
 export default class Film extends Component {
   state = {
